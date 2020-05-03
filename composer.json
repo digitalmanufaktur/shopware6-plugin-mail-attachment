@@ -1,0 +1,26 @@
+{
+    "name": "dmf/sw6-plugin-mail-attachment",
+    "type": "shopware-platform-plugin",
+    "description": "Mail attachments support",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "digital.manufaktur GmbH",
+            "email": "hallo@digitalmanufaktur.com",
+            "homepage": "https://www.digitalmanufaktur.com/"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Dmf\\MailAttachment\\": "src"
+        }
+    },
+    "extra": {
+        "shopware-plugin-class": "Dmf\\MailAttachment\\DmfMailAttachment",
+        "copyright": "digital.manufaktur GmbH",
+        "label": {
+            "de-DE": "Mail attachment",
+            "en-GB": "Mail attachment"
+        }
+    }
+}

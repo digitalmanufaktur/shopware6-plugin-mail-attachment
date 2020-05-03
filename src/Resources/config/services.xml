@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * @author digital.manufaktur GmbH
+ * @link   https://www.digitalmanufaktur.com/
+ */
+-->
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <imports>
+        <import resource="console.xml"/>
+    </imports>
+    <services>
+        <service id="Dmf\MailAttachment\Content\MailTemplate\Subscriber\MailSendSubscriberDecorator" decorates="Shopware\Core\Content\MailTemplate\Subscriber\MailSendSubscriber">
+            <argument type="service" id="Dmf\MailAttachment\Content\MailTemplate\Subscriber\MailSendSubscriberDecorator.inner"/>
+            <argument type="service" id="mail_template.repository"/>
+        </service>
+        <service id="Dmf\MailAttachment\Content\MailTemplate\Service\MailServiceDecorator" decorates="Shopware\Core\Content\MailTemplate\Service\MailService">
+            <argument type="service" id="Dmf\MailAttachment\Content\MailTemplate\Service\MailServiceDecorator.inner"/>
+            <argument type="service" id="shopware.filesystem.public"/>
+            <argument type="service" id="shopware.filesystem.private"/>
+            <argument type="service" id="Shopware\Core\Content\Media\Pathname\UrlGeneratorInterface"/>
+            <argument type="service" id="media.repository"/>
+        </service>
+    </services>
+</container>

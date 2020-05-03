@@ -1,0 +1,15 @@
+{% block dmf_mail_media %}
+    <div class="dmf-mail-media" v-if="isCustomFieldsLoaded">
+        {% block dmf_mail_media_attachment_media1 %}
+            <sw-media-field v-model="mailTemplate.customFields.dmf_mail_attachment_media1"></sw-media-field>
+        {% endblock %}
+
+        {% block dmf_mail_media_attachment_media2 %}
+            <sw-media-field v-model="mailTemplate.customFields.dmf_mail_attachment_media2"></sw-media-field>
+        {% endblock %}
+
+        {% block dmf_mail_media_attachment_media3 %}
+            <sw-media-field v-model="mailTemplate.customFields.dmf_mail_attachment_media3"></sw-media-field>
+        {% endblock %}
+    </div>
+{% endblock %}

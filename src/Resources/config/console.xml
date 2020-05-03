@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * @author digital.manufaktur GmbH
+ * @link   https://www.digitalmanufaktur.com/
+ */
+-->
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="Dmf\MailAttachment\Console\MailAttachmentTriggerOrderCreationCommand">
+            <argument type="service" id="order.repository"/>
+            <argument type="service" id="Shopware\Core\Checkout\Cart\Order\OrderConverter"/>
+            <argument type="service" id="event_dispatcher"/>
+            <tag name="console.command"/>
+        </service>
+    </services>
+</container>

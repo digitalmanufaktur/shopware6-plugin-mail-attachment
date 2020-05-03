@@ -1,0 +1,11 @@
+{% block sw_mail_template_detail_options_info %}
+    {% parent %}
+
+    {% block sw_mail_template_detail_options_media %}
+        <sw-card :title="$tc('mailattachment.media')" :isLoading="isLoading">
+            {% block sw_mail_template_detail_options_media_component %}
+                <dmf-mail-media :mailTemplate="mailTemplate"></dmf-mail-media>
+            {% endblock %}
+        </sw-card>
+    {% endblock %}
+{% endblock %}

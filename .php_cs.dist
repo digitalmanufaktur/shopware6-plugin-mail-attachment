@@ -1,0 +1,24 @@
+<?php declare(strict_types=1);
+
+use PhpCsFixer\Finder;
+use PhpCsFixer\Config;
+
+$finder = Finder::create()
+    ->in(__DIR__);
+
+$licenseInformation = <<<'EOF'
+@author digital.manufaktur GmbH
+@link   https://www.digitalmanufaktur.com/
+EOF;
+
+return Config::create()
+    ->setUsingCache(false)
+    ->setRules([
+        'header_comment' => [
+            'header' => $licenseInformation,
+            'separate' => 'bottom',
+            'location' => 'after_declare_strict',
+            'comment_type' => 'comment',
+        ],
+    ])
+    ->setFinder($finder);
